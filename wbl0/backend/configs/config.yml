@@ -1,0 +1,13 @@
+db: 
+  username: "user_wb_l0"
+  host: "localhost"
+  port: "5432"
+  dbname: "wb_l0"
+  sslmode: "disable"
+server:
+  port: "8000"
+nats:
+  clusterID: "test-cluster"
+  clientID: "ND5ACDKU6ASYX2SQDUIL5AMZJ6BRV6FVG75EOOGNQVQJMULP4K2GWYPU"
+  channelName: "purchases"
+  durableName: "dur"

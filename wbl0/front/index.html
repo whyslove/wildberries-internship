@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+<script>
+    const xhr = new XMLHttpRequest()
+
+    function sendRequest() {
+        url = "http://localhost:8000/api/purchase/get/"
+        id = document.getElementById("requesting_id").value
+        console.log(id)
+        xhr.open("GET", url + id)
+        xhr.send()
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                //parse JSON datax`x
+                data = JSON.parse(xhr.responseText)
+                document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+                console.log(data)
+                // console.log(data.products)
+            } else if (xhr.status === 400) {
+                document.getElementById("json").innerHTML = "Такого id нет в кеше"
+            }
+
+        }
+    }
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Wb front</title>
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div style="width: 200px; margin: auto; ">
+        <p><input type="text" class="rounded-input" id="requesting_id"></p>
+        <p><input type="button" class="but" value="Отправить" onclick="sendRequest()"></p>
+        <p>
+        <div>
+            <pre id="json">Пока вы не сделали ни одного запроса</pre>
+        </div>
+        </p>
+    </div>
+
+</body>
+
+</html>

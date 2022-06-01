@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: db
+    image: postgres
+    environment:
+      POSTGRES_USER: wb
+      POSTGRES_PASSWORD: wb_pass
+      POSTGRES_DB: wb_l2
+    ports:
+      - 5433:5432
+    restart: unless-stopped
+  # app:
+  #   build: .
+  #   ports:
+  #     - 8000:8000
+  #   network_mode: host

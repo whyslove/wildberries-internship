@@ -1,0 +1,8 @@
+db: 
+  username: "wb"
+  host: "localhost"
+  port: "5433"
+  dbname: "wb_l2"
+  sslmode: "disable"
+server:
+  port: "8000"
